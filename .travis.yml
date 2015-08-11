@@ -1,9 +1,7 @@
 language: cpp
 compiler:
-    - gcc-4.9.2
+    - gcc
 script:
-    - make; make test
+    - make && make test
 install:
-    - sudo add-apt-repository --yes ppa:ubuntu-toolchain-r/test
-    - sudo apt-get -qq update
-    - sudo apt-get -qq instal g++-4.9.2
+    - make get-deps
