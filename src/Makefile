@@ -1,8 +1,7 @@
-CXX=g++
-CXXFLAGS=-std=c++1y -Wall -I. -I../include -O3
-LD=g++
-LDFLAGS=-L. -L../lib
-AR=ar
+include ../Makefile.mk
+
+CXXFLAGS+=-I../include -O3
+LDFLAGS+=-L../lib
 ARFLAGS=rsv
 
 TARGET=../lib/libmylib.a

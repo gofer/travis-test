@@ -1,7 +1,7 @@
-CXX=g++
-CXXFLAGS=-std=c++1y -Wall -I../../include -I. -O3
-LD=g++
-LDFLAGS=-L../../lib -L.
+include ../../Makefile.mk
+
+CXXFLAGS+=-I../../include
+LDFLAGS+=-L../../lib
 
 TARGET=debug.out
 SRCS=test1.cc
@@ -13,7 +13,7 @@ OBJS=$(addsuffix .o,$(basename $(SRCS)))
 all: $(TARGET)
 
 $(TARGET): $(OBJS)
-	$(LD)  $(LDFLAGS)  -o $@ $^ -lmylib
+	$(CXX) $(LDFLAGS)  -o $@ $^ -lmylib
 
 .cc.o:
 	$(CXX) $(CXXFLAGS) -o $@ -c $<
