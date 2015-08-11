@@ -1,4 +1,5 @@
 *.o
 *.a
 *.stackdump
+*.out
 lib/
