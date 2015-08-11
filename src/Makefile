@@ -1,5 +1,5 @@
 CXX=g++
-CXXFLAGS=-std=c++11 -Wall -I. -I../include -O3
+CXXFLAGS=-std=c++1y -Wall -I. -I../include -O3
 LD=g++
 LDFLAGS=-L. -L../lib
 AR=ar
