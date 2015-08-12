@@ -2,17 +2,16 @@
 
 all:
 	@if ! ( [ -e lib ] && [ -d lib ] ) then mkdir lib; fi
-	cd ./src; make; cd ..
+	cd $(shell pwd)/src && make PWD=$(shell pwd)/src
 
 test: ./lib/libmylib.a
-	cd ./test; make; make test; cd ..
+	cd $(shell pwd)/test && make PWD=$(shell pwd)/test && make test PWD=$(shell pwd)/test
 
 clean:
-	cd ./src;  make clean; cd ..
-	cd ./test; make clean; cd ..
+	cd $(shell pwd)/src  && make clean
+	cd $(shell pwd)/test && make clean
 
 distclean:
-	cd ./src;  make distclean; cd ..
-	cd ./test; make distclean; cd ..
+	cd $(shell pwd)/src;  make distclean
+	cd $(shell pwd)/test; make distclean
 	@if   ( [ -e lib ] && [ -d lib ] ) then rmdir lib; fi
-

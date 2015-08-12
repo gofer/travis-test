@@ -22,7 +22,7 @@ test: $(TARGET)
 	./$(TARGET)
 
 clean:
-	rm -f *.o
+	rm -f *.{o,stackdump}
 
 distclean:
 	make clean && rm -f $(TARGET)
