@@ -3,6 +3,6 @@
 
 int main()
 {
-    assert(add(-4, 6) == -2);
+    assert(add(-4, 6) == 2);
     return 0;
 }
